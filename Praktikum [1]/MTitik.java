@@ -1,5 +1,5 @@
 /**
- * File      	  : Titik.java		21/02/24
+ * File      	  : MTitik.java		21/02/24
  * Nama penulis   : Sajid Nouval
  * NIM            : 24060122140110
  * Deskripsi 	  : Kelas yang berisi main dari Titik

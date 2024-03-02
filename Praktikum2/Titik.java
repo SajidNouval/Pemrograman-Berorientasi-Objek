@@ -1,68 +1,67 @@
 package Praktikum2;
+//Sajid Nouval - 24060122140110
 
-public class Titik {
+class Titik {
     //Atribut
-    private double absis;
-    private double ordinat;
-    //private double jarak;
-    //Static inc numberOfPoints;
+    private double absis, ordinat;
+    private static double counterTitik;
 
-    //konstruktor
-    //Membuat objek titik dengan inisialisasi nilai absis dan ordinat
-    public Titik(double absis, double ordinat){
-        this.absis = absis;
-        this.ordinat = ordinat;
+    //Constructor
+    Titik() {
+        this.absis = 0;
+        this.ordinat = 0;
+        this.counterTitik++;
     }
 
-    //Membuat objek titik dengan inisiasi absis 0 dan ordinat 0
-    public Titik(){
-        this(0,0);
+    Titik(double a, double b) {
+        this.absis = a;
+        this.ordinat = b;
+        this.counterTitik++;
     }
-    //Method
-    //Fungsi selektor untuk mendapatkan nilai atribut absis
-    public double getOrdinat(){
-        return this.ordinat;
+
+    //Absis
+    void setAbsis(double a) {
+        this.absis = a;
     }
-    //Fungsi selektor untuk mendapatkan nilai atribut ordinat
-    public double getAbsis(){
+
+    double getAbsis() {
         return this.absis;
     }
-    //FUngsi selektor untuk menghitung jarak sebuah titik dengan titik pusat (0,0)
-    public double getJarakPusat(){
-        return Math.sqrt((absis * absis) + (ordinat * ordinat));
+
+    //Ordinat
+    void setOrdinat(double b) {
+        this.ordinat = b;
     }
 
-    //Prosedur untuk mengeset nilai atribut absis dengan nilai yang baru
-    public void setAbsis(double absis){
-        this.absis = absis;
+    double getOrdinat() {
+        return this.ordinat;
     }
-    //Prosedur untuk mengeset nilai atribut ordinat dengan nilai yang baru
-    public void setOrdinat(double ordinat){
-        this.ordinat = ordinat;
+
+    //CounterTitik
+    static double getcounterTitik() {
+        return counterTitik;
     }
+
+    //getJarakPusat
+    public double getJarakPusat(){
+        return Math.sqrt((this.absis * this.absis) + (this.ordinat * this.ordinat));
+    }
+
     public void refleksiX(Titik titik){
-        double ordinat = titik.getOrdinat();
-        ordinat *= -1;
-        titik.getOrdinat(ordinat);
-        //this.absis = this.ordinat * -1;
+        this.ordinat = titik.getOrdinat();
+        this.ordinat *= -1;
+        titik.setOrdinat(ordinat);
     }
     public void refleksiY(Titik titik){
-        double absis = titik.getAbsis();
-        absis *= -1;
-        titik.getAbsis(absis);
-        //this.ordinat = this.absis * -1;
+        this.absis = titik.getAbsis();
+        this.absis *= -1;
+        titik.setAbsis(absis);
     }
-    public Titik getRefleksiX(){
-        Titik titik;
+    public void getRefleksiX(Titik titik){
         refleksiX(titik);
-        //Titik titik = new Titik(-absis, ordinat);
-        //return titik;
+
     }
-    public Titik getRefleksiY(){
-        Titik titik;
+    public void getRefleksiY(Titik titik){
         refleksiY(titik);
-        //Titik titik = new Titik(absis, -ordinat);
-        //return titik;
     }
 }
-

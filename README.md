@@ -1,1 +1,1 @@
-# praktikumpbo
+# Praktikum Pemrograman Berorientasi Objek
